@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
     "scripts": {
-    "start": "NODE_ENV=production nodemon server/app.js",
+    "start": "webpack-dev-server && node server.js",
     "start-ar": "ls",
     "prod": "cross-env NODE_ENV=production webpack-dev-server --env.prod=true",
+    "build": "rimraf build && cross-env NODE_ENV=production webpack --env.prod=true --env.sw=true",
     "devbuild": "rimraf build && cross-env NODE_ENV=production webpack --env.sw=true",
-    "serve": "pushstate-server build/ 3000",
-    "dev": "webpack-dev-server"
+    "serve": "pushstate-server build/ 3000"
   },
   "license": "ISC",
   "devDependencies": {
