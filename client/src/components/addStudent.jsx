@@ -39,7 +39,7 @@ class Student extends React.Component {
     var that = this
     $.ajax({
       type: 'POST',
-      url: ' http://localhost:3000/api/student/',
+      url: '/api/student/',
       data: that.state.states,
       success: function (data) {
         // once student successfully created redirect the user

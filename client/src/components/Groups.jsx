@@ -29,7 +29,8 @@ export default class Groups extends React.Component {
 
   componentWillMount () {
     var that = this
-    fetch('http://localhost:3000/api/student/groups')
+    console.log('I am here ')
+    fetch('/api/student/groups')
         .then(function(res){
           return res.json()
         })
@@ -39,7 +40,6 @@ export default class Groups extends React.Component {
   }
 
   createGroup = () =>{
-    console.log(this.state.title)
     fetch('http://localhost:3000/api/student/groups', {
       method: 'post',
       headers: {

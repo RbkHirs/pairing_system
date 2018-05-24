@@ -43,7 +43,7 @@ class Pairing extends React.Component {
     var that = this
     $.ajax({
       type: 'PUT',
-      url: 'http://localhost:3000/api/student/update',
+      url: '/api/student/update',
       data: {'student': that.state.pairing},
       success: function (res) {
         console.log('sucesss')
@@ -51,7 +51,7 @@ class Pairing extends React.Component {
     })
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/api/student/createGroupName',
+      url: '/api/student/createGroupName',
       data: that.state.groups,
       success: function (res) {
         console.log('add Group')
