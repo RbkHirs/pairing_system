@@ -5,7 +5,7 @@
   "main": "index.js",
     "scripts": {
      "react-dev": "webpack -d --watch",
-      "server-dev": "nodemon server/app.js"
+      "server-dev": "node server/app.js"
   },
   "license": "ISC",
   "devDependencies": {
