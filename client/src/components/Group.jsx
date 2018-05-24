@@ -26,7 +26,7 @@ export default class SingleGroup extends React.Component {
 
   componentWillMount () {
     var that = this
-    fetch('http://localhost:3000/api/student/createGroupName/GetAll', {
+    fetch('/api/student/createGroupName/GetAll', {
       credentials: 'include',
       headers: {
         Accept: 'application/json',

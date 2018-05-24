@@ -29,7 +29,7 @@ export default class Groups extends React.Component {
 
   componentWillMount () {
     var that = this
-    fetch('http://localhost:3000/api/student/groups')
+    fetch('/api/student/groups')
         .then(function(res){
           return res.json()
         })
