@@ -4,6 +4,7 @@ import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import {Tabs, Tab} from 'material-ui/Tabs'
 import AppBar from 'material-ui/AppBar'
+import ReactDOM from 'react-dom';
 
 class App extends React.Component {
   constructor (props) {
@@ -17,7 +18,6 @@ class App extends React.Component {
   render () {
     return (
       <div>
-
         <Drawer open={this.state.open}>
           <MenuItem onClick={() => history.push('/groups')}> Groups </MenuItem>
           <MenuItem onClick={() => history.push('/pairs')}> Pairs </MenuItem>

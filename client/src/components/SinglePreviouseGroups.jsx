@@ -5,8 +5,8 @@ import TextField from 'material-ui/TextField';
 import {Grid, Row, Col} from 'react-flexbox-grid';
 import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
-import Pairs from './singlePairs';
-import NotExist from '../messages/notExist';
+import Pairs from './singlePairs.jsx';
+import NotExist from '../messages/notExist.jsx';
 
 export default class SinglePreviouseGroups extends React.Component {
   constructor(props) {
