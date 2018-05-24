@@ -13,5 +13,5 @@ render(
   <MuiThemeProvider>
     {routes}
   </MuiThemeProvider>,
-  document.getElementById('root')
+  document.getElementById('app')
 )

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Grid, Row, Col} from 'react-flexbox-grid';
-import SinglePreviouseGroups from './SinglePreviouseGroups';
+import SinglePreviouseGroups from './SinglePreviouseGroups.jsx';
 import methods from './methods';
 import fetch from 'isomorphic-fetch';
 import Paper from 'material-ui/Paper';

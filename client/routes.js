@@ -3,9 +3,9 @@
  */
 import React from 'react'
 import {Router, Route, IndexRoute, browserHistory, browserHistory as history} from 'react-router'
-import Dashboard from './src/index'
-import Student from './src/components/addStudent'
-import Groups from './src/components/Groups'
+import Dashboard from './src/index.jsx'
+import Student from './src/components/addStudent.jsx'
+import Groups from './src/components/Groups.jsx'
 import Pairing from './src/components/pairingList.jsx'
 import Group from './src/components/Group.jsx'
 

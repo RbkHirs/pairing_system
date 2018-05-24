@@ -3,6 +3,9 @@ var bodyParser = require('body-parser')
 var express = require('express')
 var db = require('./db/db.js')
 var app = express()
+var path = require('path');
+
+
 app.use(function (req, res, next) {
   // Allow the client's you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080')
@@ -21,14 +24,15 @@ app.use(function (req, res, next) {
   next()
 })
 app.use(express.static(__dirname + '/../client/dist'))
+app.get('*', (req, res) => {
+ res.sendFile(path.resolve(path.join(__dirname, '/../client/dist/index.html')));
+});
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/api/student', require('./db/router'))
 
-app.get('/', function (req, res) {
-  res.send('Hello World!')
-})
 
 app.listen(port, function () {
   console.log('Example app listening on port ' + port + '!')

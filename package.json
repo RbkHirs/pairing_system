@@ -4,12 +4,8 @@
   "description": "",
   "main": "index.js",
     "scripts": {
-    "start": "webpack-dev-server && node server.js",
-    "start-ar": "ls",
-    "prod": "cross-env NODE_ENV=production webpack-dev-server --env.prod=true",
-    "build": "rimraf build && cross-env NODE_ENV=production webpack --env.prod=true --env.sw=true",
-    "devbuild": "rimraf build && cross-env NODE_ENV=production webpack --env.sw=true",
-    "serve": "pushstate-server build/ 3000"
+     "react-dev": "webpack -d --watch",
+      "server-dev": "node server/app.js"
   },
   "license": "ISC",
   "devDependencies": {

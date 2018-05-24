@@ -11,7 +11,7 @@ b. For front-end: react-js.
 c. For database: Mongoose.  
 d. For design: material-ui.  
   
-The homepage is the main part of the app. It has two components; paringList and addStudent. Each component has one file in “client” folder. Also you will find in the client folder, "index.jsx" file which role is display the components on the homepage, and "routes.js" has all the routes and connect them to the main page in "index.js" file. 
+The homepage is the main part of the app. It has two components; paringList and addStudent. Each component has one file in “client” folder. Also you will find in the client folder, "index.jsx" file which role is display the components on the homepage, and "routes.js" has all the routes and connect them to the main page in "index.jsx" file. 
 In this app the user can insert information to add new student in “add Student page” which include student name, level and cohort number. This information is saved in the database which is named as db file in the server folder. The other type of inserted information is the pairing names, which will added to the database for each student when the user click submit for the created pairing list.    
 In the server part, definitely, it has get, post and put actions. Add student uses post request. On the other hand, create new pairing list uses get request, and also will use the put request to add the new pairing names to the database.
 
