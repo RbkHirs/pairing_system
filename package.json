@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
     "scripts": {
-    "start": "webpack-dev-server && node server.js",
+    "start": "node server.js",
     "start-ar": "ls",
     "prod": "cross-env NODE_ENV=production webpack-dev-server --env.prod=true",
     "build": "rimraf build && cross-env NODE_ENV=production webpack --env.prod=true --env.sw=true",
