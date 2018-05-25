@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import {Router, Route, IndexRoute, browserHistory, browserHistory as history} from 'react-router'
-import Dashboard from './src/index.jsx'
+import Main from './src/Main.jsx'
 import Student from './src/components/addStudent.jsx'
 import Groups from './src/components/Groups.jsx'
 import Pairing from './src/components/pairingList.jsx'
@@ -11,7 +11,7 @@ import Group from './src/components/Group.jsx'
 
 const routes = (
   <Router history={browserHistory}>
-    <Route path='/' component={Dashboard}>
+    <Route path='/' component={Main}>
       <Route path='/student' component={Student} />
       <Route path='/pairing' component={Pairing} />
       <Route path='/groups' component={Groups} />

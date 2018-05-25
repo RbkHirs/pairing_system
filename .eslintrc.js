@@ -7,5 +7,8 @@
  */
 
 module.exports = {
-  extends: './node_modules/eslint-config-hackreactor/index.jsx'
+    "parser": "babel-eslint",
+  "rules": {
+    "strict": 0
+  }
 };
