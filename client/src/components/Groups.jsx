@@ -40,7 +40,7 @@ export default class Groups extends React.Component {
   }
 
   createGroup = () =>{
-    fetch('http://localhost:3000/api/student/groups', {
+    fetch('/api/student/groups', {
       method: 'post',
       headers: {
         'Accept': 'application/json',

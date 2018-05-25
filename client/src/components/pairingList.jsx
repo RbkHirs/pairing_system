@@ -70,7 +70,7 @@ class Pairing extends React.Component {
     var that = this
     $.ajax({
       type: 'GET',
-      url: ' http://localhost:3000/api/student/',
+      url: ' /api/student/',
       data: {},
       success: function (dataB) {
         function randomaize (data) {
