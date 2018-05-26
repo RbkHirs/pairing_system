@@ -1,21 +1,23 @@
-var studentRouter = require('express').Router()
+var pairingRouter = require('express').Router()
 var studentController = require('./StudentController.js')
-var groupNameController = require('./GroupNameController.js')
-var groupController = require('./GroupsController.js')
+var GroupsController = require('./GroupsController.js')
+var collectionsController = require('./CollectionsController.js')
 
-/// /////// Student Router //////////
-studentRouter.route('/').post(studentController.createOne)
-studentRouter.route('/').get(studentController.retrieve)
-studentRouter.route('/update').put(studentController.updateOne)
-/// /////// Student Router //////////
+// student routes
+pairingRouter.route('/student').post(studentController.createOne)
+pairingRouter.route('/student').get(studentController.retrieve)
+pairingRouter.route('/update').put(studentController.updateOne)
 
-/// /////// GroupName Router //////////
-studentRouter.route('/createGroupName').post(groupNameController.CreateOne)
-studentRouter.route('/createGroupName/GetAll').get(groupNameController.RetrieveAll)
-/// /////// GroupName Router //////////
 
-// group router
-studentRouter.route('/groups').post(groupController.CreateOne)
-studentRouter.route('/groups').get(groupController.RetrieveAll)
+// groups routes
+pairingRouter.route('/groups').post(GroupsController.CreateOne)
+pairingRouter.route('/groups').get(GroupsController.RetrieveAll)
+pairingRouter.route('/groups/:uid').get(GroupsController.RetrieveOne)
 
-module.exports = studentRouter
+// collections routes
+pairingRouter.route('/collections').post(collectionsController.CreateOne)
+pairingRouter.route('/collections').get(collectionsController.RetrieveAll)
+pairingRouter.route('/collections/:group').get(collectionsController.RetrieveOne)
+
+
+module.exports = pairingRouter

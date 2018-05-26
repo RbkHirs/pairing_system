@@ -10,17 +10,17 @@ import Pairing from './src/components/pairingList.jsx'
 import Group from './src/components/Group.jsx'
 
 const routes = (
-  <Router history={browserHistory}>
-    <Route path='/' component={Main}>
-      <Route path='/student' component={Student} />
-      <Route path='/pairing' component={Pairing} />
-      <Route path='/groups' component={Groups} />
-      <Route path='/groups/:id' component={Group} />
-      <Route path='/assessments' component={null} />
-      <Route path='/cohorts' component={null} />
-      <Route path='/projects' component={null} />
-    </Route>
-  </Router>
+    <Router history={browserHistory}>
+      <Route path='/' component={Main}>
+        <IndexRoute component={Groups} />
+        <Route path='/student' component={Student} />
+        <Route path='/groups/:id' component={Group} />
+        <Route path='/pairing' component={Pairing} />
+        <Route path='/assessments' component={null} />
+        <Route path='/cohorts' component={null} />
+        <Route path='/projects' component={null} />
+      </Route>
+    </Router>
 )
 
 export default routes
