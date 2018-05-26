@@ -8,6 +8,8 @@ import Dialog from 'material-ui/Dialog';
 import TextField from 'material-ui/TextField';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import { browserHistory as history } from 'react-router'
+
 
 export default class Groups extends React.Component {
   constructor () {
@@ -29,8 +31,7 @@ export default class Groups extends React.Component {
 
   componentWillMount () {
     var that = this
-    console.log('I am here ')
-    fetch('/api/student/groups')
+    fetch('/api/groups')
         .then(function(res){
           return res.json()
         })
@@ -40,27 +41,26 @@ export default class Groups extends React.Component {
   }
 
   createGroup = () =>{
-    fetch('/api/student/groups', {
-      method: 'post',
+      fetch(`/api/groups`, {
+          method: 'post',
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        Accept: 'application/json',
       },
-      body:JSON.stringify({
+           body:JSON.stringify({
         title: this.state.title,
         cohort: this.state.cohort,
       })
     })
-        .then(function(res){
-
+        .then(function(response){
+          return response.json();
         })
-        .then(function(res){
-
+        .then(function (response) {
+          that.setState({groups: response})
+        }, function (error) {
         })
   }
 
   render(){
-    console.log(this.state)
     return (
         <Paper zDepth={2} style={{padding:'1em'}}>
           <Dialog
@@ -99,7 +99,7 @@ export default class Groups extends React.Component {
           </Row>
           {this.state.groups.map( group =>{
             return (
-                <Card style={{margin:'1em'}}>
+                <Card onClick={()=>{history.push(`/groups/${group._id}`)}} style={{margin:'1em'}}>
                   <CardHeader
                       title={group.title}
                       subtitle="Subtitle"
