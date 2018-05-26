@@ -26,7 +26,7 @@ export default class SingleGroup extends React.Component {
 
   componentWillMount () {
     var that = this
-    fetch('/api/student/createGroupName/GetAll', {
+    fetch(`/api/collections/${this.props.params.id}`, {
       credentials: 'include',
       headers: {
         Accept: 'application/json',
@@ -54,13 +54,11 @@ export default class SingleGroup extends React.Component {
   render(){
     return (
         <Grid fluid>
-          <Paper zDepth={2} style={{alignText: 'center', margin:'1em', padding: '1em'}}>
             <SinglePreviouseGroups handleGroupSearch={(value) => {
               this.handleGroupSearch(value)
             }} handleNameSearch={(value) => {
               this.handleNameSearch(value)
             }} groups={this.state.groups}/>
-          </Paper>
         </Grid>
     )
   }
