@@ -11,23 +11,19 @@ import NotExist from '../messages/notExist.jsx';
 export default class SinglePreviouseGroups extends React.Component {
   constructor(props) {
     super(props)
-     this.state = {
-      
-      groups:[]
   }
+
+  handleGroupSearch = (evt, value) => {
+    this.setState({groupName: value})
+    this.props.handleGroupSearch(value)
+
   }
-  componentWillMount () {
-    var that = this
-    fetch('/api/groups')
-        .then(function(res){
-          return res.json()
-        })
-        .then(function(res){
-       
-          that.setState({groups: res})
-        })
+
+  handleNameSearch = (evt, value) => {
+    this.setState({name: value})
+    this.props.handleNameSearch(value)
   }
-  
+
   render() {
     const style = {
       height: 1200,
@@ -55,7 +51,7 @@ export default class SinglePreviouseGroups extends React.Component {
             </Col>
             <Col lg={4}/>
           </Row>
-          {this.state.groups.length ? this.state.groups.map(item => {
+          {this.props.groups.length ? this.props.groups.map(item => {
             return (
                 <Paper style={style} zDepth={1}>
                   <Card>
@@ -68,11 +64,11 @@ export default class SinglePreviouseGroups extends React.Component {
                       </Col>
                     </Row>
                   </Card>
-
                   <Pairs pairs={item['Pairs']}/>
                 </Paper>
             )
           }) : <NotExist/>}
+
 
         </div>
     )
