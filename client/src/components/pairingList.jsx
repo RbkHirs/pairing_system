@@ -2,7 +2,7 @@ import React from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
 import Paper from 'material-ui/Paper'
-
+import $ from "jquery"
 import {
   Table,
   TableBody,
@@ -19,7 +19,6 @@ class Pairing extends React.Component {
       pairing: [],
       groups: {
         title: '',
-        GroupSize: '',
         Pairs: []
 
       }
@@ -31,9 +30,7 @@ class Pairing extends React.Component {
 
   add () {
     var states = this.state.groups
-    var size = this.state.pairing.length
     var pairing = this.state.pairing
-    states['GroupSize'] = Number(size)
     states['title'] = this.state.groups['title']
     states['Pairs'] = pairing
     this.setState({
@@ -43,7 +40,7 @@ class Pairing extends React.Component {
     var that = this
     $.ajax({
       type: 'PUT',
-      url: '/api/student/update',
+      url: '/api/update',
       data: {'student': that.state.pairing},
       success: function (res) {
         console.log('sucesss')
@@ -51,12 +48,13 @@ class Pairing extends React.Component {
     })
     $.ajax({
       type: 'POST',
-      url: '/api/student/createGroupName',
+      url: '/api/groups',
       data: that.state.groups,
       success: function (res) {
         console.log('add Group')
       }
     })
+    
   }
   onChange (e) {
     var name = e.target.id
@@ -164,7 +162,7 @@ class Pairing extends React.Component {
             </TableBody>
           </Table>
           <RaisedButton label='Submit' buttonStyle={{ background: '#FF1493'}} onChange={this.onChange} onClick={this.add} />
-        </Paper>
+        </Paper> 
     )
   }
 }

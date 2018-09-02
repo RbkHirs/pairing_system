@@ -33,9 +33,7 @@ class Student extends React.Component {
   }
 
   handleSubmit () {
-    this.setState({	StudentName: '',
-      Level: '',
-      CohortNumber: ''})
+    console.log(this.state.states)
     var that = this
     $.ajax({
       type: 'POST',
